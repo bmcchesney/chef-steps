@@ -11,8 +11,8 @@ var app = express();
 
 // GET /
 app.get('/', function(req, res) {
-  res.send("A simple http server for chef-steps coding challenge.\n" +
-    "POST /remove-duplicates w/ a payload containing an array of email strings");
+  res.send("<p>A simple http server for chef-steps coding challenge.\n\n" +
+    "<b>POST /remove-duplicates</b> w/ a payload containing an array of email strings.</p>");
 });
 
 // POST /remove-duplicates
@@ -24,10 +24,20 @@ app.post('/remove-duplicates', function(req, res) {
   });
 
   req.on('end', function() {
-    var res_body = JSON.parse(data);
-    res.send(JSON.stringify(common.removeDups(res_body)));
+    var req_body = JSON.parse(data);
+    var res_body = '';
+    try {
+      res_body = common.removeDups(res_body);
+    } catch (e) {
+      next(e);
+    }
+    res.send(JSON.stringify(res_body));
   });
-  
+});
+
+app.use(function(err, req, res, next) {
+  res.status(500);
+  res.send(err);
 });
 
 app.listen(process.env.PORT || PORT_NUMBER);
