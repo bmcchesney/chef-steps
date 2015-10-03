@@ -1,15 +1,22 @@
 {
   "name": "chef-steps",
   "version": "1.0.0",
-  "description": "A simple node http server for removing duplicates from a set.",
-  "main": "./app/server.js",
-  "scripts": {
-    "start": "node ./app/server.js"
-  },
+  "description": "A simple express server for the chef-steps coding challenge.",
+  "main": "index.js",
   "dependencies": {
-    "httpdispatcher": "0.4.0"
+    "express": "4.13.3"
+    },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "engines": {
-    "node": "0.12.2"
-  }
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bmcchesney/chef-steps.git"
+  },
+  "author": "brett m mcchesney",
+  "bugs": {
+    "url": "https://github.com/bmcchesney/chef-steps/issues"
+  },
+  "homepage": "https://github.com/bmcchesney/chef-steps"
 }
