@@ -1,0 +1,12 @@
+{
+  "name": "chef-steps",
+  "version": "1.0.0",
+  "description": "A simple node http server for removing duplicates from a set.",
+  "main": "./app/server.js",
+  "scripts": {
+    "start": "node ./app/server.js"
+  },
+  "dependencies": {
+    "httpdispatcher": "0.4.0"
+  },
+}
