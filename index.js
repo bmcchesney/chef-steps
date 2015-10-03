@@ -9,10 +9,13 @@ var PORT_NUMBER = 3000;
 
 var app = express();
 
+// GET /
 app.get('/', function(req, res) {
-  res.send("A simple http server for chef-steps coding challenge.\n");
+  res.send("A simple http server for chef-steps coding challenge.\n" +
+    "POST /remove-duplicates w/ a payload containing an array of email strings");
 });
 
+// POST /remove-duplicates
 app.post('/remove-duplicates', function(req, res) {
   var data = '';
 
