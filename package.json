@@ -9,4 +9,7 @@
   "dependencies": {
     "httpdispatcher": "0.4.0"
   },
+  "engines": {
+    "node": "0.12.2"
+  }
 }
