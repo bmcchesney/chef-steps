@@ -11,24 +11,27 @@ var app = express();
 
 // GET /
 app.get('/', function(req, res) {
-  res.send("<p>A simple http server for chef-steps coding challenge.\n" +
-    "<b>POST /remove-duplicates</b> w/ a payload containing an array of email strings.</p>");
+  res.send(
+    "<p>A simple http server for chef-steps coding challenge.</p>" +
+    "<p><b>POST /remove-duplicates</b> w/ a payload containing an array of email strings.</p>");
 });
 
 // POST /remove-duplicates
 app.post('/remove-duplicates', function(req, res, next) {
-  var data = '';
+  var body = '';
 
   req.on('readable', function() {
-    data += req.read();
+    var data = req.read();
+    if (data)
+      body += data;
   });
 
   req.on('end', function() {
-    var items = JSON.parse(data);
+    var items = JSON.parse(body.trim());
     var res_body = '';
     try {
       res_body = common.removeDups(items);
-      res.send(JSON.stringify(res_body));
+      res.json(res_body);
     } catch (e) {
       next(e);
     }
