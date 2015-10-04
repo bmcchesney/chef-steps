@@ -27,7 +27,7 @@ When run locally the function executes within the given time constraints, howeve
 When considering very large datasets (1m+ items), I first thought about some real usages for this functionality.  Based on the size of the data set it quickly becomes impossible to store the dataset in memory on a single machine.  We can handle 1m items on a normal modern architecture, but then we also have to consider where our inputs come from and what our outputs would look like.
 
 ```
-100k items @ 255 characters -> 255 KB
+100k items @ 255 characters -> 25.5 MB
 1m items @ 255 characters -> 255 MB
 1b items @ 255 characters -> 255 GB
 ```
