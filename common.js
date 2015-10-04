@@ -8,10 +8,11 @@
  * @return {Array.string}       an array of strings.
  */
 function removeDups(items) {
-  if (!Array.isArray(items))
-    throw 'items must be an array';
-  if (items === null || items.length === 0)
+  if (items === null || 
+      !Array.isArray(items) || 
+      items.length === 0) {
     return [];
+  }
 
   var lookup = {};
   var set = [];
